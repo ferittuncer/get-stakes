@@ -6,6 +6,7 @@
   "private": false,
   "dependencies": {
     "@kleros/xystra": "^0.2.0",
+    "csv": "^5.1.1",
     "express": "^4.17.1"
   }
 }
