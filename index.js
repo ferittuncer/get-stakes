@@ -3,7 +3,7 @@ const app = express()
 const klerosLiquidSetStake = require('./src/kleros-liquid-set-stake.js')
 const csv = require('csv')
 
-app.listen(port, () =>
+app.listen(process.env.PORT, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
 )
 
