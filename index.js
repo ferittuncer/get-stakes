@@ -4,7 +4,9 @@ const port = 80
 const klerosLiquidSetStake = require('./src/kleros-liquid-set-stake.js')
 const csv = require('csv')
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () =>
+  console.log(`Example app listening on port ${process.env.PORT}!`)
+)
 
 // app.get('/', async function(req, res) {
 //   const address = '0x988b3a538b618c7a603e1c11ab82cd16dbe28069'
