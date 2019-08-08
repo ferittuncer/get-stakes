@@ -7,22 +7,22 @@ app.listen(process.env.PORT, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
 )
 
-// app.get('/', async function(req, res) {
-//   const address = '0x988b3a538b618c7a603e1c11ab82cd16dbe28069'
-//   const rows = await klerosLiquidSetStake(address)
-//
-//   const date = new Date()
-//
-//   res.setHeader(
-//     'Content-disposition',
-//     `attachment; filename=kleros-liquid-set-stake-${address}-${date.toISOString()}.csv`
-//   )
-//   res.writeHead(200, {
-//     'Content-Type': 'text/csv'
-//   })
-//
-//   csv.stringify(rows).pipe(res)
-//   // res.send(filePath) // Set disposition and send it.
-// })
+app.get('/', async function(req, res) {
+  const address = '0x988b3a538b618c7a603e1c11ab82cd16dbe28069'
+  const rows = await klerosLiquidSetStake(address)
 
-app.get('/', (req, res) => res.send('Hello World!'))
+  const date = new Date()
+
+  res.setHeader(
+    'Content-disposition',
+    `attachment; filename=kleros-liquid-set-stake-${address}-${date.toISOString()}.csv`
+  )
+  res.writeHead(200, {
+    'Content-Type': 'text/csv'
+  })
+
+  csv.stringify(rows).pipe(res)
+  // res.send(filePath) // Set disposition and send it.
+})
+
+// app.get('/', (req, res) => res.send('Hello World!'))
