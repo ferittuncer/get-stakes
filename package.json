@@ -6,7 +6,8 @@
   "private": false,
   "dependencies": {
     "csv": "^5.1.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "web3": "1.2"
   },
   "scripts": {
     "start": "node index.js"
