@@ -7,10 +7,15 @@ const csv = require('csv')
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 app.get('/', async function(req, res) {
-  const rows = await klerosLiquidSetStake(
-    '0x988b3A538b618C7A603e1c11Ab82Cd16dbE28069'
+  const address = '0x988b3a538b618c7a603e1c11ab82cd16dbe28069'
+  const rows = await klerosLiquidSetStake(address)
+
+  const date = new Date()
+
+  res.setHeader(
+    'Content-disposition',
+    `attachment; filename=kleros-liquid-set-stake-${address}-${date.toISOString()}.csv`
   )
-  res.setHeader('Content-disposition', 'attachment; filename=testing.csv')
   res.writeHead(200, {
     'Content-Type': 'text/csv'
   })
